@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth | Premium Login & Sign Up</title>
+  <link rel="stylesheet" href="auth.css" />
+  <script src="https://unpkg.com/lucide-icons/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="auth-wrapper">
+    <div class="auth-box" id="authBox">
+      <!-- Login Form -->
+      <div class="form-container sign-in">
+        <h2>Welcome Back</h2>
+        <form action="#" method="POST">
+          <div class="input-group">
+            <input type="email" required />
+            <label>Email</label>
+          </div>
+          <div class="input-group password-group">
+            <input type="password" required id="loginPassword"/>
+            <label>Password</label>
+            <span class="toggle-password" data-target="loginPassword">
+              <i data-lucide="eye"></i>
+            </span>
+          </div>
+          <div class="extra-links">
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p class="toggle-text">Don’t have an account? <a href="#" id="showSignUp">Sign Up</a></p>
+        </form>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div class="form-container sign-up">
+        <h2>Create Account</h2>
+        <form action="#" method="POST">
+          <div class="input-group">
+            <input type="text" required />
+            <label>Full Name</label>
+          </div>
+          <div class="input-group">
+            <input type="email" required />
+            <label>Email</label>
+          </div>
+          <div class="input-group password-group">
+            <input type="password" required id="signupPassword"/>
+            <label>Password</label>
+            <span class="toggle-password" data-target="signupPassword">
+              <i data-lucide="eye"></i>
+            </span>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <p class="toggle-text">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const authBox = document.getElementById("authBox");
+const showSignUp = document.getElementById("showSignUp");
+const showLogin = document.getElementById("showLogin");
+const toggleButtons = document.querySelectorAll(".toggle-password");
+
+// Switch between Login & Signup
+showSignUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  authBox.classList.add("active");
+});
+
+showLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  authBox.classList.remove("active");
+});
+
+// Show/Hide password
+toggleButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const targetId = btn.getAttribute("data-target");
+    const input = document.getElementById(targetId);
+    const icon = btn.querySelector("i");
+
+    if (input.type === "password") {
+      input.type = "text";
+      icon.setAttribute("data-lucide", "eye-off");
+    } else {
+      input.type = "password";
+      icon.setAttribute("data-lucide", "eye");
+    }
+
+    lucide.createIcons(); // refresh icons
+  });
+});
+
+  </script>
+  <script> lucide.createIcons(); </script>
+</body>
+</html>

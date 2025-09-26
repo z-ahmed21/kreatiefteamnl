@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - KreatiefTeamNL</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="team.css"> <!-- Link to your CSS -->
+  <head>
+  <!-- Other head content -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container header-container">
+      <a href="#home" class="branding">
+        <img src="images/logo.png" alt="KreatiefTeam NL Logo" class="site-logo" />
+        <h1 class="logo">KreatiefTeam NL</h1>
+      </a>
+  <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+          <li><a href="price.html" class="nav-link">Price</a></li>
+        </ul>
+      </nav>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+    
+  </header>
+
+
+<!-- Team Section -->
+    <section id="team" class="team-section">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">Creative minds, technical expertise, and a shared passion for excellence.</p>
+
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-card" onclick="openModal('zainModal')">
+            <img src="images/team1.jpg" alt="Zain Ahmed" class="team-photo" />
+            <h3 class="team-name">Zain Ahmed</h3>
+            <p class="team-role">Founder & 3D Artist</p>
+            <div class="team-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-behance"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-card" onclick="openModal('ayeshaModal')">
+            <img src="images/team2.jpg" alt="Ayesha Noor" class="team-photo" />
+            <h3 class="team-name">Ayesha Noor</h3>
+            <p class="team-role">Web Developer</p>
+            <div class="team-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-card" onclick="openModal('aliModal')">
+            <img src="images/team3.jpg" alt="Ali Raza" class="team-photo" />
+            <h3 class="team-name">Ali Raza</h3>
+            <p class="team-role">Graphic Designer</p>
+            <div class="team-socials">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <div id="zainModal" class="team-modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('zainModal')">&times;</span>
+        <h3>Zain Ahmed</h3>
+        <p>Founder & 3D Artist with over 6 years of experience in Blender and After Effects. Zain specializes in product animation and character rigging. Passionate about storytelling through motion.</p>
+      </div>
+    </div>
+
+    <div id="ayeshaModal" class="team-modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('ayeshaModal')">&times;</span>
+        <h3>Ayesha Noor</h3>
+        <p>Full-stack web developer skilled in React, WordPress, and UI/UX. Ayesha builds scalable, responsive websites with a strong focus on performance and accessibility.</p>
+      </div>
+    </div>
+
+    <div id="aliModal" class="team-modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('aliModal')">&times;</span>
+        <h3>Ali Raza</h3>
+        <p>Graphic Designer known for bold branding, eye-catching visuals, and a minimalistic style. Ali creates logos, brochures, and social content that elevates brand identity.</p>
+      </div>
+    </div>
+
+    
+ <footer class="footer">
+  <div class="container footer-container">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="KreatiefTeam NL Logo" class="footer-logo" />
+      <h2>KreatiefTeam NL</h2>
+      <p>
+        Your all-in-one digital partner for web design, graphics, animation,
+        and data services.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+     <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+         <li><a href="team.html">Team</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+           <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li> <!-- Privacy link -->
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <p>Nijmegen, NL</p>
+      <p>Phone: +31 6 17109365</p>
+      <p>Email: kreatiefteamnl@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 KreatiefTeam NL. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+    // Modal functions
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.querySelectorAll('.team-modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal.id);
+        }
+      });
+    });
+    </script>
+</body>
+</html>
