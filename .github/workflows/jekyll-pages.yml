@@ -16,11 +16,12 @@ jobs:
         with:
           submodules: false
 
-      # Setup Ruby for Jekyll
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v2
+           # Setup Ruby for Jekyll
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'  # Jekyll compatible Ruby version
+          ruby-version: '3.2'      # Specify the desired Ruby version
+          bundler-cache: true      # Enable bundler caching for faster builds
 
       # Install dependencies
       - name: Install dependencies
@@ -34,9 +35,10 @@ jobs:
 
       # Upload build artifacts for Pages
       - name: Upload site to GitHub Pages
-        uses: actions/upload-pages-artifact@v2  # UPDATED version
+        uses: actions/upload-pages-artifact@v2
         with:
           path: _site
+
 
   deploy:
     runs-on: ubuntu-latest
