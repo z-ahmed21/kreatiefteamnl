@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main  # your default branch
+      - main
 
 jobs:
   build-deploy:
@@ -16,12 +16,12 @@ jobs:
         with:
           submodules: false
 
-           # Setup Ruby for Jekyll
+      # Setup Ruby for Jekyll
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'      # Specify the desired Ruby version
-          bundler-cache: true      # Enable bundler caching for faster builds
+          ruby-version: '3.2'
+          bundler-cache: true
 
       # Install dependencies
       - name: Install dependencies
@@ -33,12 +33,11 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      # Upload build artifacts for Pages
+      # Upload site for GitHub Pages
       - name: Upload site to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
           path: _site
-
 
   deploy:
     runs-on: ubuntu-latest
