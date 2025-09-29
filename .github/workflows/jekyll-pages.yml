@@ -3,7 +3,7 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # your default branch
 
 jobs:
   build-deploy:
@@ -18,7 +18,7 @@ jobs:
 
       # Setup Ruby for Jekyll
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v2
         with:
           ruby-version: '3.2'  # Jekyll compatible Ruby version
 
@@ -34,7 +34,7 @@ jobs:
 
       # Upload build artifacts for Pages
       - name: Upload site to GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2  # UPDATED version
         with:
           path: _site
 
