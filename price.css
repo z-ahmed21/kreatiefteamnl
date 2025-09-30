@@ -334,3 +334,190 @@ ul {
 }
 
 
+
+
+/* =============================================
+   EXTRA MOBILE POLISH FOR PREMIUM FEEL
+============================================= */
+
+/* For tablets & small laptops */
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 15px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .discount {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .category h3 {
+    font-size: 1.2rem;
+    padding-left: 8px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .card h4 {
+    font-size: 1.2rem;
+  }
+
+  .card .price {
+    font-size: 1.3rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  /* Special packages */
+  .special-packages {
+    padding: 50px 15px;
+    margin-bottom: 40px;
+  }
+
+  .special-packages h2 {
+    font-size: 1.6rem;
+  }
+
+  .special-packages .discount {
+    font-size: 0.95rem;
+  }
+
+  .special-packages .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card.premium::before {
+    top: 15px;
+    right: -40px;
+    font-size: 0.75rem;
+    padding: 4px 40px;
+  }
+
+  /* Intro section */
+  .intro-section {
+    margin: 25px auto;
+    padding: 15px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .intro-section p {
+    font-size: 0.95rem;
+  }
+
+  /* Duplicate header */
+  .header-duplicate {
+    padding: 60px 15px;
+    margin-top: 30px;
+  }
+
+  .header-duplicate h1 {
+    font-size: 2rem;
+  }
+
+  .header-duplicate p {
+    font-size: 1rem;
+  }
+}
+
+/* For phones (≤576px) */
+@media (max-width: 576px) {
+  .section {
+    padding: 40px 10px;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  .discount {
+    font-size: 0.9rem;
+  }
+
+  .category h3 {
+    font-size: 1.1rem;
+    padding-left: 6px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h4 {
+    font-size: 1.1rem;
+  }
+
+  .card .price {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  /* Special packages */
+  .special-packages {
+    padding: 40px 10px;
+  }
+
+  .special-packages h2 {
+    font-size: 1.4rem;
+  }
+
+  .card.premium::before {
+    top: 10px;
+    right: -30px;
+    font-size: 0.7rem;
+    padding: 3px 35px;
+  }
+
+  /* Intro section */
+  .intro-section {
+    padding: 12px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .intro-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Duplicate header */
+  .header-duplicate {
+    padding: 50px 10px;
+  }
+
+  .header-duplicate h1 {
+    font-size: 1.7rem;
+  }
+
+  .header-duplicate p {
+    font-size: 0.9rem;
+  }
+}
