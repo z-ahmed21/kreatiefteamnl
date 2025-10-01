@@ -1221,290 +1221,99 @@ section {
 /* =============================================
    RESPONSIVE STYLES
 ============================================= */
-@media (max-width: 1200px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (max-width: 992px) {
-  .container {
-    max-width: 720px;
-  }
-  
-  .hero-pro h1 {
-    font-size: 2.5rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .portfolio-header {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 540px;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .nav {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: var(--white);
-    transition: all var(--transition-normal);
-  }
-  
-  .nav.show {
-    left: 0;
-  }
-  
-  .nav-links {
-    flex-direction: column;
-    padding: var(--spacing-lg);
-  }
-  
-  .nav-link {
-    display: block;
-    padding: var(--spacing-md);
-    border-bottom: 1px solid #eee;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero-pro {
-    padding: 120px 0 80px;
-  }
-  
-  .hero-pro h1 {
-    font-size: 2rem;
-  }
-  
-  .cta-title {
-    font-size: 2rem;
-  }
-  
-  .portfolio-header {
-    font-size: 2.2rem;
-  }
-  
-  .filter-buttons {
-    gap: 8px;
-  }
-  
-  .filter-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .header-container {
-    padding: 10px 15px;
-  }
-  
-  .logo {
-    font-size: 1.2rem;
-  }
-  
-  .site-logo {
-    height: 30px;
-  }
-  
-  section {
-    padding: 60px 0;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .portfolio-header {
-    font-size: 1.8rem;
-  }
-  
-  .portfolio-subheader {
-    font-size: 1rem;
-  }
-  
-  .filter-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .filter-btn {
-    width: 200px;
-  }
-  
-  .project-card {
-    height: auto;
-  }
-  
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .social-icons {
-    justify-content: center;
-  }
-}
-
-.branding {
-  display: flex;
-  align-items: center;  /* vertically centers logo & text */
-  gap: 8px;             /* little space between logo and text */
-}
-
-.site-logo {
-  height: 38px;         /* slightly smaller logo for balance */
-}
-
-.logo {
-  font-size: 1.4rem;    /* reduce font size a bit */
-  font-weight: 700;
-  color: #2563eb;
-  line-height: 1;       /* ensures no extra vertical spacing */
-  position: relative;
-  top: 2px;             /* nudges text slightly lower */
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;  /* vertical alignment */
-  gap: 20px;            /* tighter spacing */
-}
-
-.nav-link {
-  font-size: 0.95rem;   /* slightly smaller */
-  font-weight: 500;
-  padding: 6px 10px;    /* reduced padding */
-  color: #1e293b;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  background: rgba(37, 99, 235, 0.08);
-  color: #2563eb;
-}
-.header-container {
-  padding: 12px 28px; /* slightly less padding for slim header */
-}
-
-.header {
-  background: #ffffff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05); /* elegant shadow */
-}
-
-.branding {
-  display: flex;
-  align-items: center;   /* ensures perfect vertical centering */
-  gap: 10px;             /* space between logo and text */
-}
-
-.site-logo {
-  height: 36px;          /* smaller for balance */
-  display: block;        /* prevents weird inline spacing */
-}
-
-.logo {
-  font-size: 1.3rem;     /* slightly smaller text */
-  font-weight: 700;
-  color: #2d2c2c;
-  line-height: 1;        /* removes extra vertical padding */
-  margin: 0;             /* reset margins */
-  padding: 0;
-  display: flex;
-  align-items: center;   /* aligns text to the middle of the logo */
-}
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 32px;   /* increase vertical padding for taller header */
-}
-
-.site-logo {
-  height: 40px;         /* slightly larger logo */
-}
-
-.logo {
-  font-size: 1.4rem;    /* upscale text just a touch */
-}
 
 
 /* =============================================
    EXTRA MOBILE POLISH (Premium & Decent Look)
 ============================================= */
 
-/* For tablets & small laptops */
+/* Tablet & small laptop */
 @media (max-width: 768px) {
-  /* Navigation */
   .nav-links {
     width: 100%;
     max-width: 300px;
     right: 10px;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
   }
 
   .nav-link {
     font-size: 1rem;
     padding: 14px;
     text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .nav-link:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: #000;
   }
 
-  /* Hero section */
   .hero-pro {
     padding: 100px 15px 70px;
+    transition: padding 0.3s ease;
   }
-  .hero-pro h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-  .hero-pro p {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-  .hero-buttons {
-    gap: 15px;
-  }
+  .hero-pro h1 { font-size: 2rem; line-height: 1.3; transition: font-size 0.3s ease; }
+  .hero-pro p { font-size: 1rem; margin-bottom: 25px; transition: font-size 0.3s ease, margin-bottom 0.3s ease; }
 
-  /* Sections */
-  section {
-    padding: 60px 15px;
+  .btn, .btn-book {
+    transition: all 0.3s ease;
   }
+  .btn:hover, .btn-book:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
 
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-  .section-subtitle {
-    font-size: 0.95rem;
-  }
+  section { padding: 60px 15px; transition: padding 0.3s ease; }
+  .section-title { font-size: 1.8rem; margin-bottom: 20px; }
+  .section-subtitle { font-size: 0.95rem; }
 
-  /* Grids stack neatly */
+  /* Cards stack neatly */
+  .services-grid,
+  .projects-grid,
+  .team-grid,
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .service-box,
+  .project-card,
+  .team-card,
+  .feature-box {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+    opacity: 0; /* fade-in */
+  }
+  .service-box.visible,
+  .project-card.visible,
+  .team-card.visible,
+  .feature-box.visible {
+    opacity: 1;
+  }
+  .service-box:hover,
+  .project-card:hover,
+  .team-card:hover,
+  .feature-box:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
+}
+
+/* Phones ≤576px */
+@media (max-width: 576px) {
+  .header-container { padding: 12px 20px; transition: padding 0.3s ease; }
+  .logo { font-size: 1.2rem; transition: font-size 0.3s ease; }
+  .site-logo { height: 32px; transition: height 0.3s ease; }
+
+  .hero-pro { padding: 90px 10px 60px; }
+  .hero-pro h1 { font-size: 1.6rem; }
+  .hero-pro p { font-size: 0.9rem; }
+
+  .btn, .btn-book { width: 100%; text-align: center; padding: 14px; transition: all 0.3s ease; }
+  .btn:hover, .btn-book:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+
+  section { padding: 50px 10px; }
+  .portfolio-header { font-size: 1.6rem; }
+  .cta-title { font-size: 1.5rem; }
+
   .services-grid,
   .projects-grid,
   .team-grid,
@@ -1512,73 +1321,46 @@ section {
     grid-template-columns: 1fr;
     gap: 25px;
   }
-
-  /* Cards spacing */
   .service-box,
   .project-card,
   .team-card,
   .feature-box {
-    border-radius: 12px;
-  }
-}
-
-/* For phones (≤576px) */
-@media (max-width: 576px) {
-  /* Header */
-  .header-container {
-    padding: 12px 20px;
-  }
-  .logo {
-    font-size: 1.2rem;
-  }
-  .site-logo {
-    height: 32px;
-  }
-
-  /* Hero */
-  .hero-pro {
-    padding: 90px 10px 60px;
-  }
-  .hero-pro h1 {
-    font-size: 1.6rem;
-  }
-  .hero-pro p {
-    font-size: 0.9rem;
-  }
-  .btn, .btn-book {
+    max-width: 100%;
     width: 100%;
-    text-align: center;
-    padding: 14px;
+    padding: 18px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+    opacity: 0;
   }
+  .service-box.visible,
+  .project-card.visible,
+  .team-card.visible,
+  .feature-box.visible { opacity: 1; }
 
-  /* Section spacing */
-  section {
-    padding: 50px 10px;
-  }
+  .service-box:hover,
+  .project-card:hover,
+  .team-card:hover,
+  .feature-box:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 
-  /* Text sizes */
-  .portfolio-header {
-    font-size: 1.6rem;
-  }
-  .cta-title {
-    font-size: 1.5rem;
-  }
-
-  /* Review & testimonial cards */
   .testimonial-card,
   .single-review {
     max-width: 100%;
     width: 100%;
     padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+    opacity: 0;
   }
+  .testimonial-card.visible,
+  .single-review.visible { opacity: 1; }
 
-  /* Footer */
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
-  }
-  .social-icons {
-    justify-content: center;
-  }
+  .footer-container { grid-template-columns: 1fr; text-align: center; gap: 30px; transition: all 0.3s ease; }
+  .social-icons { justify-content: center; transition: all 0.3s ease; }
+  .social-icons a { transition: transform 0.3s ease, color 0.3s ease; }
+  .social-icons a:hover { transform: scale(1.1); color: #007BFF; }
 }
+

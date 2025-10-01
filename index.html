@@ -517,6 +517,26 @@ function loadReviews() {
 }
 
 
+// Apply fade-in animation on scroll for premium effect
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeElements = document.querySelectorAll(
+    ".service-box, .project-card, .team-card, .feature-box, .testimonial-card, .single-review"
+  );
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => observer.observe(el));
+});
+
+
+
 
 // Load reviews when page loads
 window.addEventListener("load", loadReviews);
