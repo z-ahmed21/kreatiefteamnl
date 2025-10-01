@@ -1224,3 +1224,113 @@ section {
 
 
 
+/* =============================================
+   MOBILE OPTIMIZATION
+============================================= */
+@media (max-width: 768px) {
+
+  /* Featured Portfolio: One project per line */
+  .featured-portfolio .project-grid,
+  .projects-grid {
+    grid-template-columns: 1fr; /* One project per row */
+    gap: 20px;
+  }
+
+  /* Hero Section Text */
+  .hero-pro h1 {
+    font-size: 2rem;
+  }
+
+  .hero-pro p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Hero Buttons */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr; /* one per row */
+  }
+
+  .service-box img {
+    height: 250px;
+  }
+
+  /* Team Grid */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-photo {
+    height: 250px;
+  }
+
+  /* Stats Section */
+  .cta-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Testimonials */
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Reviews */
+  .reviews-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .single-review {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Contact Popup */
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Filter buttons */
+  .filter-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Portfolio project card height */
+  .project-card {
+    height: auto; /* adjusts automatically for mobile */
+  }
+
+  .project-img {
+    height: 200px;
+  }
+}
