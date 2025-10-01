@@ -5,15 +5,22 @@ on:
     branches:
       - main
 
+# 🔑 Add permissions so deploy-pages can push to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: false  # Important: skip all submodules
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -29,7 +36,13 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      # 👇 Upload built site so it can be deployed
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+      # 👇 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
