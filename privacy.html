@@ -30,10 +30,21 @@
           <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
           <li><a href="price.html" class="nav-link">Price</a></li>
         </ul>
+
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+        <!-- Hamburger Menu -->
+<button class="menu-toggle" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Backdrop -->
+<div class="nav-backdrop"></div>
+
+
       </nav>
-
-
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     </div>
     
   </header>
@@ -142,6 +153,38 @@
     <p>&copy; 2024 KreatiefTeam NL. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+
+  const toggleMenu = () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    navBackdrop.classList.toggle('active');
+  };
+
+  // Open/Close menu
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking on backdrop
+  navBackdrop.addEventListener('click', toggleMenu);
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.classList.remove('active');
+      navBackdrop.classList.remove('active');
+    });
+  });
+});
+
+
+</script>
+
 
 </body>
 </html>

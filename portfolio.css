@@ -475,3 +475,65 @@ a {
     transform: translateY(0);
   }
 }
+
+
+/* =============================
+   Small Enhancements
+============================= */
+
+/* Slightly smoother header hover underline */
+nav a::after {
+    transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* Add subtle hover effect to logo */
+.branding:hover .logo {
+    color: #00c9ff;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Card overlay glow effect on hover */
+.project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 201, 255, 0.3);
+    transform: translateY(-12px);
+}
+
+/* Slightly enhance project image zoom */
+.project-card:hover .project-img img {
+    transform: scale(1.12);
+}
+
+/* Footer logo subtle scale on hover */
+.footer-brand:hover .footer-logo {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Social icons hover glow */
+.footer-social ul li a:hover {
+    color: #00c9ff;
+    text-shadow: 0 0 8px #00c9ff;
+}
+
+/* Enhance filter buttons hover */
+.filter-btn.active, 
+.filter-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Add subtle transition for project skill tags */
+.project-skills span {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-skills span:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 201, 255, 0.35);
+}
+
+/* Smooth text color transition for headings */
+h1, h2, h3, .portfolio-header {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+

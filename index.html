@@ -20,14 +20,13 @@
 
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="team.html" class="nav-link">Team</a></li>
           <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
           <li><a href="price.html" class="nav-link">Price</a></li>
-          <li><a href="auth.html" class="login-btn">Login / Sign Up</a></li>
         </ul>
       </nav>
 
@@ -520,6 +519,32 @@ function loadReviews() {
 // Load reviews when page loads
 window.addEventListener("load", loadReviews);
 </script> 
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// Create backdrop dynamically
+let navBackdrop = document.createElement('div');
+navBackdrop.className = 'nav-backdrop';
+document.body.appendChild(navBackdrop);
+
+// Toggle menu and backdrop
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  navBackdrop.classList.toggle('active');
+});
+
+// Close menu when clicking on backdrop
+navBackdrop.addEventListener('click', () => {
+  menuToggle.classList.remove('active');
+  navLinks.classList.remove('active');
+  navBackdrop.classList.remove('active');
+});
+
+</script>
+
   
 </body>
 </html>

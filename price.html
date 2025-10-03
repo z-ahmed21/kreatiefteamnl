@@ -462,5 +462,86 @@ window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 </script>
 
+<script>
+  // Mobile Navigation Toggle
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Only run if both elements exist on the page
+    if(menuToggle && navLinks){
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when a nav link is clicked (mobile)
+      const navItems = document.querySelectorAll('.nav-links a');
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// Create backdrop dynamically
+let navBackdrop = document.createElement('div');
+navBackdrop.className = 'nav-backdrop';
+document.body.appendChild(navBackdrop);
+
+// Toggle menu and backdrop
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  navBackdrop.classList.toggle('active');
+});
+
+// Close menu when clicking on backdrop
+navBackdrop.addEventListener('click', () => {
+  menuToggle.classList.remove('active');
+  navLinks.classList.remove('active');
+  navBackdrop.classList.remove('active');
+});
+
+
+// Ensure menu toggle works on all devices
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+
+  if (menuToggle && navLinks && navBackdrop) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      navBackdrop.classList.toggle('active');
+    });
+
+    navBackdrop.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      navBackdrop.classList.remove('active');
+    });
+
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        navBackdrop.classList.remove('active');
+      });
+    });
+  }
+});
+
+</script>
+
+
 </body>
 </html>

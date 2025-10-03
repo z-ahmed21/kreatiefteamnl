@@ -546,6 +546,29 @@
     </script>
 
 
+<script>
+  // Mobile Navigation Toggle
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Only run if both elements exist on the page
+    if(menuToggle && navLinks){
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when a nav link is clicked (mobile)
+      const navItems = document.querySelectorAll('.nav-links a');
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
 
 
 </body>

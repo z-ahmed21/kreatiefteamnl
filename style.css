@@ -442,15 +442,19 @@ h1, h2, h3, h4, h5, h6 {
 /* ------------------------------
    Header & Navigation
 --------------------------------*/
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
+.header { 
+  position: fixed; 
+  top: 0; left: 0;
   width: 100%;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #ffffff; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
   z-index: 1000;
-}
+ }
+ h1{
+  margin: 10px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+ }
 
 .header-container {
   display: flex;
@@ -460,6 +464,34 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 16px 32px;
 }
+
+/* ------------------------------
+   Desktop nav (default)
+--------------------------------*/
+.nav-links {
+  display: flex;            /* horizontal */
+  gap: 24px;                /* spacing between links */
+  align-items: center;
+  margin-left: auto;        /* push nav to the right inside .header-container */
+  background: transparent;  /* no white box */
+  position: static;         /* ensure mobile absolute styles don't leak */
+  width: auto;
+  padding: 0;
+}
+
+/* make sure list items don't show bullets and don't stack */
+.nav-links li {
+  list-style: none;
+  margin: 0;
+}
+
+/* make each link padded and aligned */
+.nav-link {
+  display: inline-block;
+  padding: 8px 12px;
+  
+}
+
 
 .branding {
   display: flex;
@@ -1215,122 +1247,359 @@ section {
 }
 
 
+/* ==============================
+   RESPONSIVE MEDIA QUERIES
+============================== */
 
-
-
-/* =============================================
-   RESPONSIVE STYLES
-============================================= */
-
-
-
-/* =============================================
-   MOBILE OPTIMIZATION
-============================================= */
-@media (max-width: 768px) {
-
-  /* Featured Portfolio: One project per line */
-  .featured-portfolio .project-grid,
-  .projects-grid {
-    grid-template-columns: 1fr; /* One project per row */
-    gap: 20px;
-  }
-
-  /* Hero Section Text */
+/* Extra small devices (phones, < 480px) */
+@media (max-width: 480px) {
   .hero-pro h1 {
     font-size: 2rem;
   }
 
   .hero-pro p {
     font-size: 1rem;
-    padding: 0 10px;
   }
 
-  /* Hero Buttons */
   .hero-buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
-  /* Section Titles */
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: var(--spacing-md);
   }
 
-  .section-subtitle {
+  .portfolio-header {
+    font-size: 2.5rem;
+  }
+
+  .portfolio-subheader,
+  .cta-subtitle {
     font-size: 1rem;
-    padding: 0 15px;
   }
 
-  /* Services Grid */
-  .services-grid {
-    grid-template-columns: 1fr; /* one per row */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
-  .service-box img {
-    height: 250px;
+  .featured-portfolio .project-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Team Grid */
   .team-grid {
     grid-template-columns: 1fr;
   }
 
-  .team-photo {
-    height: 250px;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Stats Section */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
   .cta-stats {
     flex-direction: column;
-    gap: 30px;
+    gap: var(--spacing-lg);
   }
 
-  /* Testimonials */
-  .testimonials-wrapper {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Reviews */
   .reviews-list {
     flex-direction: column;
-    gap: 20px;
+    gap: var(--spacing-lg);
   }
 
-  .single-review {
-    width: 100%;
-  }
-
-  /* Footer */
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 30px;
   }
 
-  /* Contact Popup */
-  .popup-content {
-    width: 90%;
-    padding: 20px;
+  .nav-links {
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 12px;
   }
 
-  /* Filter buttons */
-  .filter-buttons {
+  .menu-toggle {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small devices (phones, 481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-pro h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-pro p {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-header {
+    font-size: 3rem;
+  }
+
+  .portfolio-subheader,
+  .cta-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .featured-portfolio .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .reviews-list {
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-pro h1 {
+    font-size: 3rem;
+  }
+
+  .hero-pro p {
+    font-size: 1.15rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .portfolio-header {
+    font-size: 3.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-portfolio .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-stats {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .reviews-list {
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Large devices (desktops, 992px - 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .hero-pro h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-pro p {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-header {
+    font-size: 3.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-portfolio .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta-stats {
+    gap: 60px;
+  }
+
+  .reviews-list {
+    gap: 25px;
+  }
+}
+
+/* Extra large devices (large desktops, >1200px) */
+@media (min-width: 1201px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-portfolio .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+/* ------------------------------
+   Enhanced Mobile/Tablet Nav
+--------------------------------*/
+@media (max-width: 991px) {
+  /* Backdrop for mobile menu */
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Slide-in menu */
+  .nav-links {
+    display: flex;
     flex-direction: column;
-    gap: 12px;
+    background: rgba(255,255,255,0.95);
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 250px;
+    height: 100%;
+    padding: 80px 20px 20px;
+    border-radius: 0 0 0 16px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 1000;
   }
 
-  .filter-btn {
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin-bottom: 20px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    color: #1f2937;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+  }
+
+  .nav-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
+  }
+
+  /* Hamburger icon animation */
+  .menu-toggle {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    height: 3px;
     width: 100%;
-    text-align: center;
+    background: #1e293b;
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.3s ease;
   }
 
-  /* Portfolio project card height */
-  .project-card {
-    height: auto; /* adjusts automatically for mobile */
-  }
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 10px; }
+  .menu-toggle span:nth-child(3) { top: 20px; }
 
-  .project-img {
-    height: 200px;
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
   }
 }

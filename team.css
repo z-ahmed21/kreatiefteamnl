@@ -155,3 +155,23 @@ nav a:hover::after {
     transform: translateY(0);
   }
 }
+
+
+/* Ensure hamburger stays visible above backdrop and menu */
+@media (max-width: 991px) {
+  .menu-toggle {
+    position: fixed; /* so it stays in place */
+    top: 20px;       /* adjust as needed */
+    right: 20px;     /* adjust as needed */
+    z-index: 1101;   /* higher than menu and backdrop */
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Optional: make the hamburger icon change color when active */
+  .menu-toggle.active {
+    color: #6c63ff; /* your primary color */
+  }
+}
+
